@@ -1,12 +1,12 @@
 # Ansible Role: Memcached
 
 
-An Ansible Role that installs Memcached on RedHat/CentOS or Debian/Ubuntu Linux. It also installs the mecached php extension.
+An Ansible Role that installs Memcached on RedHat/CentOS or Debian/Ubuntu Linux. It also installs the memcached php extension.
 
-This role has combined the memcached and php-memcached roles with a previous Blue-Bag role. It breaks the dependency on geerlingguy.php
+This role has combined the geerlingguy.memcached and geerlingguy.php-memcached roles with a previous Blue-Bag role. It breaks the dependency on geerlingguy.php
 If you are using the geerlingguy.php role then you would be best to use the geerlingguy versions of the above roles.
 
-Also note that this role doesn't have a restart webserver handler - which wil be required after it runs.
+Also note that this role doesn't have a restart webserver handler - which will be required after it runs.
 
 ## Requirements
 
@@ -34,7 +34,7 @@ Memcached limits. The maximum amount of RAM `memcached` will consume (64MB is th
 
 The location of the memcached log file.
 
-php_enablerepo: ""
+    php_enablerepo: ""
 
 (RedHat/CentOS only) If you have enabled any additional repositories (might I suggest geerlingguy.repo-epel or geerlingguy.repo-remi), those repositories can be listed under this variable (e.g. `remi,epel`). This can be handy, as an example, if you want to install the latest version of PHP 5.4, which is in the Remi repository.
 
