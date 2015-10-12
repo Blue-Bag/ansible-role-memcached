@@ -1,2 +1,42 @@
 ---
 # tasks file for ansible-role-memcached
+
+---
+
+# Include variables and define needed variables.
+- name: Include OS-specific variables.
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- include: setup-RedHat.yml
+  when: ansible_os_family == 'RedHat'
+
+- include: setup-Debian.yml
+  when: ansible_os_family == 'Debian'
+
+- name: Copy Memcached configuration.
+  template:
+    src: memcached.conf.j2
+    dest: /etc/memcached.conf
+    owner: root
+    group: root
+    mode: 0644
+  sudo: true
+  notify: restart memcached
+
+
+- name: Memcached | PECL Library install
+  shell: printf "yes\n" | pecl install memcache creates=/usr/lib/php5/20100525/memcache.so
+  tags: memcached
+  sudo: true
+
+# work in progress - manage the memcached.ini
+# - name: Memcached | Config file for the PHP memcache extension
+#   template:
+#     src: php_apache2_memcached.ini.j2
+#     dest: /etc/php5/apache2/conf.d/memcached.ini
+#   tags: memcached
+#   sudo: true
+
+
+- name: Ensure Memcached is started and set to run on startup.
+  service: name=memcached state=started enabled=yes

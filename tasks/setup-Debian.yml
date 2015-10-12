@@ -10,3 +10,4 @@
     - memcached
     - php5-memcached
   sudo: true
+  notify: restart apache

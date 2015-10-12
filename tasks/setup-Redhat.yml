@@ -9,5 +9,5 @@
   with_items:
     - memcached
     - php-pecl-memcached
-  notify:
-    - restart webserver
+  notify: restart apache
+

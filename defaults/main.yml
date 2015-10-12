@@ -11,3 +11,6 @@ memcached_connections: 1024
 
 memcached_log_file: /var/log/memcached.log
 
+# Pass in a comma-separated list of repos to use (e.g. "remi,epel").
+php_enablerepo: ""
+

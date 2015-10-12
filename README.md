@@ -6,7 +6,7 @@ An Ansible Role that installs Memcached on RedHat/CentOS or Debian/Ubuntu Linux.
 This role has combined the geerlingguy.memcached and geerlingguy.php-memcached roles with a previous Blue-Bag role. It breaks the dependency on geerlingguy.php
 If you are using the geerlingguy.php role then you would be best to use the geerlingguy versions of the above roles.
 
-Also note that this role doesn't have a restart webserver handler - which will be required after it runs.
+Also note that this role provides a restart webserver handler.
 
 ## Requirements
 
