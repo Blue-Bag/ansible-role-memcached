@@ -1,0 +1,13 @@
+---
+
+- name: Install Memcached.
+  yum:
+    name: {item}
+    state: installed
+    enablerepo: "{{ php_enablerepo }}"
+  sudo: true
+  with_items:
+    - memcached
+    - php-pecl-memcached
+  notify:
+    - restart webserver
