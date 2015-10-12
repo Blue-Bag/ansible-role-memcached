@@ -19,13 +19,14 @@
     group: root
     mode: 0644
   sudo: true
+  tags: memcached
   notify: restart memcached
 
 
-- name: Memcached | PECL Library install
-  shell: printf "yes\n" | pecl install memcache creates=/usr/lib/php5/20100525/memcache.so
-  tags: memcached
-  sudo: true
+# - name: Memcached | PECL Library install
+#   shell: printf "yes\n" | pecl install memcache creates=/usr/lib/php5/20100525/memcache.so
+#   tags: memcached
+#   sudo: true
 
 # work in progress - manage the memcached.ini
 # - name: Memcached | Config file for the PHP memcache extension
