@@ -4,7 +4,7 @@
 
 - name: Install Memcached.
   apt:
-    name: {item}
+    name: "{{ item }}"
     state: installed
   with_items:
     - memcached
