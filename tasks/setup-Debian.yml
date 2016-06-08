@@ -9,6 +9,6 @@
   with_items:
     - memcached
     - php5-memcached
-  sudo: true
+  become: true
   notify: restart webserver
   tags: memcached

@@ -18,7 +18,7 @@
     owner: root
     group: root
     mode: 0644
-  sudo: true
+  become: true
   tags: memcached
   notify: restart memcached
 
@@ -26,7 +26,7 @@
 # - name: Memcached | PECL Library install
 #   shell: printf "yes\n" | pecl install memcache creates=/usr/lib/php5/20100525/memcache.so
 #   tags: memcached
-#   sudo: true
+#   become: true
 
 # work in progress - manage the memcached.ini
 # - name: Memcached | Config file for the PHP memcache extension
@@ -34,7 +34,7 @@
 #     src: php_apache2_memcached.ini.j2
 #     dest: /etc/php5/apache2/conf.d/memcached.ini
 #   tags: memcached
-#   sudo: true
+#   become: true
 
 
 - name: Ensure Memcached is started and set to run on startup.

@@ -5,7 +5,7 @@
     name: "{{ item }}"
     state: installed
     enablerepo: "{{ php_enablerepo }}"
-  sudo: true
+  become: true
   with_items:
     - memcached
     - php-pecl-memcached
