@@ -1,3 +1,7 @@
 ---
 
 apache_daemon: httpd
+__memcached_user: memcached
+memcached_config_file: /etc/sysconfig/memcached
+
+__php_memcached_package: php-pecl-memcached

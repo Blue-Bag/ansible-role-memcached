@@ -1,3 +1,8 @@
 ---
 
 apache_daemon: apache2
+
+__memcached_user: memcache
+memcached_config_file: /etc/memcached.conf
+
+__php_memcached_package: php-memcached

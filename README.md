@@ -1,6 +1,8 @@
 # Ansible Role: Memcached
 
 
+######## deprecated 27/06/2018   ######
+
 An Ansible Role that installs Memcached on RedHat/CentOS or Debian/Ubuntu Linux. It also installs the memcached php extension.
 
 This role has combined the geerlingguy.memcached and geerlingguy.php-memcached roles with a previous Blue-Bag role. It breaks the dependency on geerlingguy.php
