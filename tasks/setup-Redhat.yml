@@ -2,13 +2,10 @@
 
 - name: Install Memcached.
   yum:
-    name: "{{ item }}"
+    name: ['memcached', '{{ php_memcached_package }}']
     state: present
     enablerepo: "{{ php_enablerepo }}"
   become: true
-  with_items:
-    - memcached
-    - "{{ php_memcached_package }}"
   notify: restart webserver
   tags: memcached
 
