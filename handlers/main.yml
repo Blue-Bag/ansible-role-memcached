@@ -7,6 +7,4 @@
 
 - name: restart webserver
   action: service name={{ apache_daemon }} state=restarted
-  tags: common
   become: true
-
